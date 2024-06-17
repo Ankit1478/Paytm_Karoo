@@ -1,6 +1,7 @@
+import Accountbalance from "../../../components/AcountBalance";
 
-export default function() {
+export default function () {
     return <div>
-        Dashboard
+        <Accountbalance></Accountbalance>
     </div>
 }
