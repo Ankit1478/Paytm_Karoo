@@ -22,7 +22,7 @@ export default function BankLogin() {
                             <a href="#" className="text-blue-600 text-sm mt-1 inline-block">Forgot Customer ID</a>
                         </div>
                         <button onClick={() => {
-                            route.push('/transfer');
+                            route.push('/transfer')
                         }} type="submit" className="w-full bg-blue-600 text-white py-2 rounded-md">CONTINUE</button>
                     </div>
                     <div className="bg-blue-100 p-4 mt-4 rounded-md">
