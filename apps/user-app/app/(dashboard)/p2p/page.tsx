@@ -5,7 +5,6 @@ import { authOptions } from "../../lib/auth";
 import prisma from "@repo/db/client";
 import { Prisma } from "@prisma/client";
 
-// Define the type for the p2pTransfer model
 type P2PTransfer = Prisma.p2pTransferGetPayload<{
     include: {
         fromUser: {

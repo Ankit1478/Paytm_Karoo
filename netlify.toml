@@ -1,0 +1,26 @@
+[build]
+  command = "npm run build"
+  publish = "apps/user-app/build"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[plugins]]
+  package = "@netlify/plugin-prisma"
+  [plugins.inputs]
+    prisma_version = "3.8.1"
+    migrate = true
+
+[[plugins]]
+  package = "@netlify/plugin-build"
+  [plugins.inputs]
+    base = "turbo run build"
+    turbo_version = "1.12.0"
+
+[[plugins]]
+  package = "@netlify/plugin-postbuild"
+  [plugins.inputs]
+    command = "npx prisma generate"
+
+[dev]
+  command = "npm run start user-app"
