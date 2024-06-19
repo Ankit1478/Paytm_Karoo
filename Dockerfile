@@ -14,4 +14,6 @@ RUN cd packages/db && npx prisma generate && cd ../..
 
 RUN npm run build
 
+EXPOSE 3000
+
 CMD ["npm", "run", "start-user-app"]
