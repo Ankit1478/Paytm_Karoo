@@ -1,7 +1,7 @@
 - Clone the repo
 
 ```jsx
-
+git clone "git@github.com:Ankit1478/paytm_karoo.git"
 ```
 
 - npm install
