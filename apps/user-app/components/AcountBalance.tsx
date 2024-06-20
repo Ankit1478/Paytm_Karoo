@@ -2,8 +2,9 @@
 import prisma from "@repo/db/client"
 import { getServerSession } from "next-auth"
 import { authOptions } from "../app/lib/auth"
-import { OnRampTransactions } from "./Person2Person";
-import { useRouter } from "next/navigation";
+import { OnRampTransactionsperson } from "./Person2Person";
+import { OnRampTransactions } from "./OnRampTransactions";
+
 
 async function Finsuser() {
     const session = await getServerSession(authOptions);
@@ -102,7 +103,7 @@ export default async function Accountbalance() {
                 <div className="flex justify-between items-center mb-8">
                     <h1 className="text-3xl font-bold text-black-600 dark:text-black-400">Good afternoon,{Finsuser()} </h1>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-2">
 
                     <div className="lg:col-span-2 bg-white bg-[#ffffff] p-6 rounded-lg shadow">
                         <h2 className="text-black-600  mb-4">Portfolio value</h2>
@@ -128,16 +129,19 @@ export default async function Accountbalance() {
                     </div>
 
 
-                    <div className="bg-white p-6 rounded-lg shadow">
+                    <div >
                         <div>
-
                             <div >
 
-                                <OnRampTransactions transactions={transactions}></OnRampTransactions>
+                                <OnRampTransactionsperson transactions={transactions}></OnRampTransactionsperson>
                             </div>
 
                         </div>
                     </div>
+                    <div >
+                        <OnRampTransactions transactions={transaction}></OnRampTransactions>
+                    </div>
+
                 </div>
             </div>
         </div>

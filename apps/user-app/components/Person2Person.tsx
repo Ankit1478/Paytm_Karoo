@@ -1,6 +1,6 @@
 import { Card } from "@repo/ui/card";
 
-export const OnRampTransactions = ({
+export const OnRampTransactionsperson = ({
     transactions
 }: {
     transactions: {
@@ -20,7 +20,7 @@ export const OnRampTransactions = ({
         );
     }
     return (
-        <Card title="Recent Transactions">
+        <Card title="Withdraw">
             <div className="pt-2">
                 {transactions.map(t => (
                     <div className="flex justify-between" key={t.time.toISOString()}>

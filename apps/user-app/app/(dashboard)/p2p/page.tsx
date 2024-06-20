@@ -1,9 +1,10 @@
 import { getServerSession } from "next-auth";
-import { OnRampTransactions } from "../../../components/Person2Person";
+import { OnRampTransactionsperson } from "../../../components/Person2Person";
 import { SendCard } from "../../../components/SendCard";
 import { authOptions } from "../../lib/auth";
 import prisma from "@repo/db/client";
 import { Prisma } from "@prisma/client";
+import { Alert } from "../../../components/Alert";
 
 type P2PTransfer = Prisma.p2pTransferGetPayload<{
     include: {
@@ -67,13 +68,16 @@ export default async function CenteredCards() {
     }
 
     return (
-        <div className="flex items-center justify-center h-screen">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <div>
-                    <SendCard />
-                </div>
-                <div>
-                    <OnRampTransactions transactions={transactions} />
+        <div>
+            <Alert></Alert>
+            <div className="flex items-center justify-center h-screen">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                    <div>
+                        <SendCard />
+                    </div>
+                    <div>
+                        <OnRampTransactionsperson transactions={transactions} />
+                    </div>
                 </div>
             </div>
         </div>

@@ -9,10 +9,27 @@ import { p2pTransfer } from "../app/lib/actions/p2pTransfer";
 export function SendCard() {
     const [number, setNumber] = useState("");
     const [amount, setAmount] = useState("");
+    const [loading, setLoading] = useState(false)
+
+    async function handleReq() {
+        if (loading) return;
+
+        setLoading(true);
+        try {
+            const success = await p2pTransfer(number, Number(amount) * 100);
+            if (success) {
+                window.location.reload();
+            }
+        } catch (error) {
+            console.error("Transfer failed:", error);
+        } finally {
+            setLoading(false);
+        }
+    }
 
     return <div >
         <Center>
-            <Card title="Send">
+            <Card title="Send Money">
                 <div className="min-w-72 pt-2">
                     <TextInput placeholder={"Number"} label="Number" onChange={(value) => {
                         setNumber(value)
@@ -21,9 +38,9 @@ export function SendCard() {
                         setAmount(value)
                     }} />
                     <div className="pt-4 flex justify-center">
-                        <Button onClick={async () => {
-                            await p2pTransfer(number, Number(amount) * 100)
-                        }}>Send</Button>
+                        <Button onClick={handleReq}>
+                            {loading ? "Sending..." : "Send"}
+                        </Button>
                     </div>
                 </div>
             </Card>

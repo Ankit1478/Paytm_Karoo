@@ -41,19 +41,15 @@ export default function Dashboard() {
                         </li>
                         <li className="mb-4">
                             <a href="/transfer" className="flex items-center p-2 hover:bg-zinc-700 rounded">
-                                <i className="fas fa-cube mr-2"></i> Transfer
+                                <i className="fas fa-cube mr-2"></i> Add to Wallet
                             </a>
                         </li>
                         <li className="mb-4">
                             <a href="/p2p" className="flex items-center p-2 hover:bg-zinc-700 rounded">
-                                <i className="fas fa-edit mr-2"></i> P2P
+                                <i className="fas fa-edit mr-2"></i> Bank transfer
                             </a>
                         </li>
-                        <li className="mb-4">
-                            <a href="#" className="flex items-center p-2 hover:bg-zinc-700 rounded">
-                                <i className="fas fa-table mr-2"></i> Setting
-                            </a>
-                        </li>
+
                     </ul>
                 </div>
             </div>

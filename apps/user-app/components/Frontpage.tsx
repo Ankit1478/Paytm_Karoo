@@ -9,6 +9,7 @@ export function FrontPage() {
     };
 
     return (
+
         <div className="bg-dark-blue text-white min-h-screen flex flex-col">
 
             <header className="flex justify-between items-center p-4">
