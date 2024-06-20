@@ -16,10 +16,8 @@ export function SendCard() {
 
         setLoading(true);
         try {
-            const success = await p2pTransfer(number, Number(amount) * 100);
-            if (success) {
-                window.location.reload();
-            }
+            await p2pTransfer(number, Number(amount) * 100);
+
         } catch (error) {
             console.error("Transfer failed:", error);
         } finally {

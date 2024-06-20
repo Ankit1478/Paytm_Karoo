@@ -15,7 +15,7 @@ export const Appbar = ({
     onSignout
 }: AppbarProps) => {
     return <nav className="flex items-center justify-between p-4 bg-[#27272a]">
-        <div className="text-xl font-bold text-black dark:text-white">Bank</div>
+        <div className="text-xl font-bold text-black dark:text-white">Wallet</div>
         <div className="flex space-x-4">
             <Button onClick={user ? onSignout : onSignin}>{user ? "Logout" : "Login"}</Button>
         </div>
